@@ -50,8 +50,7 @@ all implemented and tested in Cisco Packet Tracer.
 
 # Topology
 
-> 📷 *Add your topology screenshot here*
-> `![topology](Topology.png)`
+![Network Topology](Topology.png)
 
 ---
 
