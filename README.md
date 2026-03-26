@@ -51,7 +51,7 @@ all implemented and tested in Cisco Packet Tracer.
 # Topology
 
 > 📷 *Add your topology screenshot here*
-> `![topology](images/topology.png)`
+> `![topology](Topology.png)`
 
 ---
 
