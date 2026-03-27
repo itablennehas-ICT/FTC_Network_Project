@@ -238,6 +238,14 @@ ip nat inside source list 100 interface G0/0/1 overload
 
 ### SSH — Restricted to IT Only 
 
+| Device | Role | Management IP | VLAN | Access |
+|--------|------|--------------|------|--------|
+| Core Switch (3560-24PS) | L3 Core | 192.168.5.1 | VLAN 5 | IT Only |
+| F1-SW (2960) | 1st Floor Access | 192.168.5.200 | VLAN 5 | IT Only |
+| F2-SW (2960) | 2nd Floor Access | 192.168.10.200 | VLAN 10 | IT Only |
+| F3-SW (2960) | 3rd Floor Access | 192.168.70.200 | VLAN 70 | IT Only |
+| Router0 (ISR4331) | WAN Gateway | 10.0.0.2 | WAN Link | IT Only |
+
 ---
 ## Testing & Verification
 
