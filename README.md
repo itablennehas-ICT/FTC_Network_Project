@@ -258,9 +258,8 @@ and confirm full connectivity across all VLANs, floors, and services.
 
 | Test | Source | Destination | Result | 
 |------|--------|-------------|----------|
-| Intra-VLAN | Data PC (VLAN 10) | Data PC (VLAN 10) | ✅ Success |
-| Inter-VLAN | Dev PC (VLAN 20) | IT PC (VLAN 70) | ✅ Success | 
-| Inter-VLAN | Admin PC (VLAN 5) | Logistics PC (VLAN 40) | ✅ Success | 
+| Inter-VLAN | Med PC (VLAN 20) | IT PC (VLAN 70) | ✅ Success | 
+| Intra-VLAN | Admin PC (VLAN 5) | Admin PC (VLAN 5) | ✅ Success | 
 | DHCP | All VLANs | Server-DHCP (192.168.100.10) | ✅ IP Assigned | 
 | Default Gateway | Any PC | Core Switch SVI | ✅ Reachable | 
 
@@ -302,8 +301,8 @@ and confirm full connectivity across all VLANs, floors, and services.
 
 | Test | Source | Destination | Result | 
 |------|--------|-------------|----------|
-| Own dept access | Data PC (VLAN 10) | Printer D (192.168.10.6) | ✅ Reachable | 
-| Cross-dept blocked | Dev PC (VLAN 20) | Printer D (192.168.10.6) | ❌ Blocked | 
+| Own dept access | Logist PC (VLAN 40) | Printer L (192.168.40.3) | ✅ Reachable | 
+| Cross-dept blocked | Data PC (VLAN 10) | Printer L (192.168.40.3) | ❌ Blocked | 
 | Cross-dept blocked | Media PC (VLAN 30) | Printer L (192.168.40.3) | ❌ Blocked | 
 
 **Printer Access from Own Department:**
