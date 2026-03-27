@@ -39,8 +39,8 @@ all implemented and tested in Cisco Packet Tracer.
 - [Routing](#routing)
 - [DHCP](#dhcp)
 - [Security — ACLs, NAT & SSH](#security--acls-nat--ssh)
+- [Testing & Verification](#Testing-Verification)
 - [Features Implemented](#features-implemented)
-- [Repository Structure](#repository-structure)
 
 ---
 
@@ -254,6 +254,101 @@ access-list 1 permit 192.168.70.0 0.0.0.255
 
 
 ---
+## Testing & Verification
+
+A systematic testing plan was conducted to validate all network features
+and confirm full connectivity across all VLANs, floors, and services.
+
+---
+
+### Connectivity Tests
+
+| Test | Source | Destination | Expected | Result |
+|------|--------|-------------|----------|--------|
+| Intra-VLAN | Data PC (VLAN 10) | Data PC (VLAN 10) | ✅ Success | ✅ Pass |
+| Inter-VLAN | Dev PC (VLAN 20) | IT PC (VLAN 70) | ✅ Success | ✅ Pass |
+| Inter-VLAN | Admin PC (VLAN 5) | Logistics PC (VLAN 40) | ✅ Success | ✅ Pass |
+| DHCP | All VLANs | Server-DHCP (192.168.100.10) | ✅ IP Assigned | ✅ Pass |
+| Default Gateway | Any PC | Core Switch SVI | ✅ Reachable | ✅ Pass |
+
+**Intra-VLAN Ping Test:**
+![intra_vlan](images/intra_vlan_ping.png)
+
+**Inter-VLAN Ping Test:**
+![inter_vlan](images/inter_vlan_ping.png)
+
+---
+
+### Internet Access Tests (NAT + ACL)
+
+| Test | Source | Destination | Expected | Result |
+|------|--------|-------------|----------|--------|
+| Internet allowed | IT PC (VLAN 70) | 8.8.8.8 | ✅ Reachable | ✅ Pass |
+| Internet allowed | Admin PC (VLAN 5) | 8.8.8.8 | ✅ Reachable | ✅ Pass |
+| Internet blocked | Dev PC (VLAN 20) | 8.8.8.8 | ❌ Blocked | ✅ Pass |
+| Internet blocked | Media PC (VLAN 30) | 8.8.8.8 | ❌ Blocked | ✅ Pass |
+| Internet blocked | Logistics PC (VLAN 40) | 8.8.8.8 | ❌ Blocked | ✅ Pass |
+
+**IT/Admin Internet Access (Allowed):**
+![internet_allowed](images/internet_allowed.png)
+
+**Dev/Media Internet Access (Blocked):**
+![internet_blocked](images/internet_blocked.png)
+
+---
+
+### Printer Isolation Tests (ACL)
+
+| Test | Source | Destination | Expected | Result |
+|------|--------|-------------|----------|--------|
+| Own dept access | Data PC (VLAN 10) | Printer D (192.168.10.200) | ✅ Reachable | ✅ Pass |
+| IT access | IT PC (VLAN 70) | Printer D (192.168.10.200) | ✅ Reachable | ✅ Pass |
+| Cross-dept blocked | Dev PC (VLAN 20) | Printer D (192.168.10.200) | ❌ Blocked | ✅ Pass |
+| Cross-dept blocked | Media PC (VLAN 30) | Printer L (192.168.40.200) | ❌ Blocked | ✅ Pass |
+
+**Printer Access from Own Department:**
+![printer_allowed](images/printer_allowed.png)
+
+**Printer Access Blocked from Other Department:**
+![printer_blocked](images/printer_blocked.png)
+
+---
+
+### SSH Management Tests
+
+| Test | Source | Destination | Expected | Result |
+|------|--------|-------------|----------|--------|
+| SSH allowed | IT PC (VLAN 70) | Core Switch | ✅ Connected | ✅ Pass |
+| SSH allowed | IT PC (VLAN 70) | F1-SW | ✅ Connected | ✅ Pass |
+| SSH blocked | Admin PC (VLAN 5) | Core Switch | ❌ Blocked | ✅ Pass |
+| SSH blocked | Dev PC (VLAN 20) | Core Switch | ❌ Blocked | ✅ Pass |
+
+**SSH Successful Login from IT PC:**
+![ssh_allowed](images/ssh_allowed.png)
+
+**SSH Blocked from Admin/Dev:**
+![ssh_blocked](images/ssh_blocked.png)
+
+---
+
+### DHCP Relay Tests
+
+| Test | VLAN | Expected IP Range | Result |
+|------|------|-------------------|--------|
+| DHCP assigned | VLAN 5 | 192.168.5.x | ✅ Pass |
+| DHCP assigned | VLAN 10 | 192.168.10.x | ✅ Pass |
+| DHCP assigned | VLAN 20 | 192.168.20.x | ✅ Pass |
+| DHCP assigned | VLAN 70 | 192.168.70.x | ✅ Pass |
+| Static IP | VLAN 100 | 192.168.100.10 | ✅ Pass |
+
+**DHCP IP Assignment on PC:**
+![dhcp_assigned](images/dhcp_assigned.png)
+
+**DHCP Bindings on Server:**
+![dhcp_bindings](images/dhcp_bindings.png)
+
+
+---
 
 ## Features Implemented
 
@@ -269,18 +364,5 @@ access-list 1 permit 192.168.70.0 0.0.0.255
 
 ---
 
-## Repository Structure
-
-
-FTC-Club-Network-Infrastructure/
-│
-├── README.md
-├── Packet Tracer/
-│   └── FTC_Network.pkt
-└── Report/
-    └── FTC_Network_Report_Final.docx
-
-
----
 
 *© FTC CLUB — March 2026 | Network Infrastructure Project*
