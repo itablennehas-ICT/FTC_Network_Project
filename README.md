@@ -20,7 +20,7 @@ all implemented and tested in Cisco Packet Tracer.
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/wassim-mazari-b607a3288/)
 
 - **TOUAL Mohamed Amine** —
-[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)]([https://linkedin.com](https://www.linkedin.com/in/amine-toual-6828243ba?utm_source=share_via&utm_content=profile&utm_medium=member_android))
+[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/amine-toual-6828243ba?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 
 - **ZEGHDOUDI Abdelbari** —
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/abdelbari-zaghdoudi-519612296/)
