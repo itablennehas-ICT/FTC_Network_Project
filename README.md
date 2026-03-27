@@ -263,13 +263,13 @@ and confirm full connectivity across all VLANs, floors, and services.
 
 ### Connectivity Tests
 
-| Test | Source | Destination | Expected | Result |
-|------|--------|-------------|----------|--------|
-| Intra-VLAN | Data PC (VLAN 10) | Data PC (VLAN 10) | ✅ Success | ✅ Pass |
-| Inter-VLAN | Dev PC (VLAN 20) | IT PC (VLAN 70) | ✅ Success | ✅ Pass |
-| Inter-VLAN | Admin PC (VLAN 5) | Logistics PC (VLAN 40) | ✅ Success | ✅ Pass |
-| DHCP | All VLANs | Server-DHCP (192.168.100.10) | ✅ IP Assigned | ✅ Pass |
-| Default Gateway | Any PC | Core Switch SVI | ✅ Reachable | ✅ Pass |
+| Test | Source | Destination | Result | 
+|------|--------|-------------|----------|
+| Intra-VLAN | Data PC (VLAN 10) | Data PC (VLAN 10) | ✅ Success |
+| Inter-VLAN | Dev PC (VLAN 20) | IT PC (VLAN 70) | ✅ Success | 
+| Inter-VLAN | Admin PC (VLAN 5) | Logistics PC (VLAN 40) | ✅ Success | 
+| DHCP | All VLANs | Server-DHCP (192.168.100.10) | ✅ IP Assigned | 
+| Default Gateway | Any PC | Core Switch SVI | ✅ Reachable | 
 
 **Intra-VLAN Ping Test:**
 ![intra_vlan](images/intra_vlan_ping.png)
@@ -281,13 +281,13 @@ and confirm full connectivity across all VLANs, floors, and services.
 
 ### Internet Access Tests (NAT + ACL)
 
-| Test | Source | Destination | Expected | Result |
-|------|--------|-------------|----------|--------|
-| Internet allowed | IT PC (VLAN 70) | 8.8.8.8 | ✅ Reachable | ✅ Pass |
-| Internet allowed | Admin PC (VLAN 5) | 8.8.8.8 | ✅ Reachable | ✅ Pass |
-| Internet blocked | Dev PC (VLAN 20) | 8.8.8.8 | ❌ Blocked | ✅ Pass |
-| Internet blocked | Media PC (VLAN 30) | 8.8.8.8 | ❌ Blocked | ✅ Pass |
-| Internet blocked | Logistics PC (VLAN 40) | 8.8.8.8 | ❌ Blocked | ✅ Pass |
+| Test | Source | Destination | Result | 
+|------|--------|-------------|----------|
+| Internet allowed | IT PC (VLAN 70) | 8.8.8.8 | ✅ Reachable | 
+| Internet allowed | Admin PC (VLAN 5) | 8.8.8.8 | ✅ Reachable | 
+| Internet blocked | Dev PC (VLAN 20) | 8.8.8.8 | ❌ Blocked | 
+| Internet blocked | Media PC (VLAN 30) | 8.8.8.8 | ❌ Blocked | 
+| Internet blocked | Logistics PC (VLAN 40) | 8.8.8.8 | ❌ Blocked | 
 
 **IT/Admin Internet Access (Allowed):**
 ![internet_allowed](images/internet_allowed.png)
@@ -299,12 +299,12 @@ and confirm full connectivity across all VLANs, floors, and services.
 
 ### Printer Isolation Tests (ACL)
 
-| Test | Source | Destination | Expected | Result |
-|------|--------|-------------|----------|--------|
-| Own dept access | Data PC (VLAN 10) | Printer D (192.168.10.200) | ✅ Reachable | ✅ Pass |
-| IT access | IT PC (VLAN 70) | Printer D (192.168.10.200) | ✅ Reachable | ✅ Pass |
-| Cross-dept blocked | Dev PC (VLAN 20) | Printer D (192.168.10.200) | ❌ Blocked | ✅ Pass |
-| Cross-dept blocked | Media PC (VLAN 30) | Printer L (192.168.40.200) | ❌ Blocked | ✅ Pass |
+| Test | Source | Destination | Result | 
+|------|--------|-------------|----------|
+| Own dept access | Data PC (VLAN 10) | Printer D (192.168.10.6) | ✅ Reachable | 
+| IT access | IT PC (VLAN 70) | Printer D (192.168.10.6) | ✅ Reachable | 
+| Cross-dept blocked | Dev PC (VLAN 20) | Printer D (192.168.10.6) | ❌ Blocked | 
+| Cross-dept blocked | Media PC (VLAN 30) | Printer L (192.168.40.3) | ❌ Blocked | 
 
 **Printer Access from Own Department:**
 ![printer_allowed](images/printer_allowed.png)
@@ -316,12 +316,12 @@ and confirm full connectivity across all VLANs, floors, and services.
 
 ### SSH Management Tests
 
-| Test | Source | Destination | Expected | Result |
-|------|--------|-------------|----------|--------|
-| SSH allowed | IT PC (VLAN 70) | Core Switch | ✅ Connected | ✅ Pass |
-| SSH allowed | IT PC (VLAN 70) | F1-SW | ✅ Connected | ✅ Pass |
-| SSH blocked | Admin PC (VLAN 5) | Core Switch | ❌ Blocked | ✅ Pass |
-| SSH blocked | Dev PC (VLAN 20) | Core Switch | ❌ Blocked | ✅ Pass |
+| Test | Source | Destination | Result | 
+|------|--------|-------------|----------|
+| SSH allowed | IT PC (VLAN 70) | Core Switch | ✅ Connected | 
+| SSH allowed | IT PC (VLAN 70) | F1-SW | ✅ Connected | 
+| SSH blocked | Admin PC (VLAN 5) | Core Switch | ❌ Blocked | 
+| SSH blocked | Dev PC (VLAN 20) | Core Switch | ❌ Blocked | 
 
 **SSH Successful Login from IT PC:**
 ![ssh_allowed](images/ssh_allowed.png)
@@ -339,7 +339,6 @@ and confirm full connectivity across all VLANs, floors, and services.
 | DHCP assigned | VLAN 10 | 192.168.10.x | ✅ Pass |
 | DHCP assigned | VLAN 20 | 192.168.20.x | ✅ Pass |
 | DHCP assigned | VLAN 70 | 192.168.70.x | ✅ Pass |
-| Static IP | VLAN 100 | 192.168.100.10 | ✅ Pass |
 
 **DHCP IP Assignment on PC:**
 ![dhcp_assigned](images/dhcp_assigned.png)
