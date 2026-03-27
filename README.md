@@ -39,7 +39,7 @@ all implemented and tested in Cisco Packet Tracer.
 - [Routing](#routing)
 - [DHCP](#dhcp)
 - [Security — ACLs, NAT & SSH](#security--acls-nat--ssh)
-- [Testing & Verification](#testing-verification)
+- [Testing & Verification](#testing--verification)
 - [Features Implemented](#features-implemented)
 
 ---
