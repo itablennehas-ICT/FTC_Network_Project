@@ -52,24 +52,7 @@ all implemented and tested in Cisco Packet Tracer.
 
 ## Architecture
 
-The network follows a **3-tier hierarchical design**:
-
-
-         Internet (8.8.8.8)
-               │
-         ISP-Router (200.0.0.2)
-               │ WAN — 200.0.0.0/30
-         ISR4331 Router0
-         NAT + ACL + Static Routes
-               │ 10.0.0.0/30
-         3560-24PS Core Switch
-         L3 — Inter-VLAN Routing + DHCP Relay
-               │
-      ┌─────────┼─────────┐
-   F1-SW      F2-SW     F3-SW
-  (2960)     (2960)    (2960)
-  1st Floor  2nd Floor  3rd Floor
-
+The network follows a **3-tier hierarchical design**
 
 | Tier | Device | Role |
 |------|--------|------|
