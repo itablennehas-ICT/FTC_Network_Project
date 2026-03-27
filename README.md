@@ -46,7 +46,7 @@ all implemented and tested in Cisco Packet Tracer.
 
 # Topology
 
-![Network Topology](Topology.png)
+![Network Topology](images/Topology.png)
 
 ---
 
@@ -265,10 +265,14 @@ and confirm full connectivity across all VLANs, floors, and services.
 | Default Gateway | Any PC | Core Switch SVI | ✅ Reachable | 
 
 **Intra-VLAN Ping Test:**
-![intra_vlan](images/intra_vlan_ping.png)
+
+
+![intra_vlan](images/Intra-vlan.png)
 
 **Inter-VLAN Ping Test:**
-![inter_vlan](images/inter_vlan_ping.png)
+
+
+![inter_vlan](images/Inter-vlan.png)
 
 ---
 
@@ -282,11 +286,15 @@ and confirm full connectivity across all VLANs, floors, and services.
 | Internet blocked | Media PC (VLAN 30) | 8.8.8.8 | ❌ Blocked | 
 | Internet blocked | Logistics PC (VLAN 40) | 8.8.8.8 | ❌ Blocked | 
 
-**IT/Admin Internet Access (Allowed):**
-![internet_allowed](images/internet_allowed.png)
+**IT Internet Access (Allowed):**
 
-**Dev/Media Internet Access (Blocked):**
-![internet_blocked](images/internet_blocked.png)
+
+![internet_allowed](images/Internet-allow.png)
+
+**Dev Internet Access (Blocked):**
+
+
+![internet_blocked](images/Internet-block.png)
 
 ---
 
@@ -299,10 +307,14 @@ and confirm full connectivity across all VLANs, floors, and services.
 | Cross-dept blocked | Media PC (VLAN 30) | Printer L (192.168.40.3) | ❌ Blocked | 
 
 **Printer Access from Own Department:**
-![printer_allowed](images/printer_allowed.png)
+
+
+![printer_allowed](images/print-allow.png)
 
 **Printer Access Blocked from Other Department:**
-![printer_blocked](images/printer_blocked.png)
+
+
+![printer_blocked](images/print-block.png)
 
 ---
 
@@ -316,10 +328,14 @@ and confirm full connectivity across all VLANs, floors, and services.
 | SSH blocked | Dev PC (VLAN 20) | Core Switch | ❌ Blocked | 
 
 **SSH Successful Login from IT PC:**
-![ssh_allowed](images/ssh_allowed.png)
 
-**SSH Blocked from Admin/Dev:**
-![ssh_blocked](images/ssh_blocked.png)
+
+![ssh_allowed](images/ssh-allow.png)
+
+**SSH Blocked from Admin :**
+
+
+![ssh_blocked](images/ssh-block.png)
 
 ---
 
@@ -333,25 +349,14 @@ and confirm full connectivity across all VLANs, floors, and services.
 | DHCP assigned | VLAN 70 | 192.168.70.x | ✅ Pass |
 
 **DHCP IP Assignment on PC:**
-![dhcp_assigned](images/dhcp_assigned.png)
+
+
+![dhcp_assigned](images/dhcp-ip.png)
 
 **DHCP Bindings on Server:**
-![dhcp_bindings](images/dhcp_bindings.png)
 
 
----
-
-## Features Implemented
-
-- [x] 9 VLANs — full department isolation
-- [x] Inter-VLAN Routing — Layer 3 Core Switch SVIs
-- [x] Centralized DHCP — relay across all VLANs
-- [x] NAT overload (PAT) — internet for IT & Admin only
-- [x] Extended ACLs — internet restriction + printer isolation
-- [x] SSH v2 — restricted to IT VLAN 70 only
-- [x] Static Routing — Router0 ↔ Core Switch
-- [x] Trunk Links — Core Switch to all floor switches
-- [x] WAN Simulation — ISP-Router with Loopback 8.8.8.8
+![dhcp_bindings](images/dhcp-pool.png)
 
 ---
 
