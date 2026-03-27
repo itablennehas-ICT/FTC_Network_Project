@@ -14,10 +14,10 @@ all implemented and tested in Cisco Packet Tracer.
 ## Authors
 
 - **TABLENNENAS Ismail** —
-[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](www.linkedin.com/in/ismail-tablennehas-17a091317)
+[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/ismail-tablennehas-17a091317/)
 
 - **MAZARI Wassim** —
-[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)]([https://linkedin.com](https://www.linkedin.com/in/wassim-mazari-b607a3288/))
+[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/wassim-mazari-b607a3288/)
 
 - **TOUAL Mohamed Amine** —
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://linkedin.com)
