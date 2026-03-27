@@ -81,7 +81,6 @@ Two VLANs serve this floor — Administration and the centralized Server Room.
 - Gateway (Core SVI): 192.168.100.1
 - Ports: Fa0/9 – Fa0/16
 - Devices: Server2, Server3, Server-DHCP (Static IP: 192.168.100.10)
-- Notes: DHCP server serves all 9 VLANs via `ip helper-address` relay on Core Switch
 
 ---
 
@@ -212,17 +211,23 @@ ip route 0.0.0.0 0.0.0.0 200.0.0.2
 ### Internet Access (Extended ACL)
 
 
-! Only IT (VLAN 70) and Admin (VLAN 5) can reach internet
+> Only IT (VLAN 70) and Admin (VLAN 5) can reach internet
+
+
 access-list 100 permit ip 192.168.70.0 0.0.0.255 any
+
+
 access-list 100 permit ip 192.168.5.0 0.0.0.255 any
+
+
 access-list 100 deny ip any any
 
 
 ### Printer Isolation (Extended ACL)
 
 
-! Printers accessible only from own VLAN 
-! Applied on Core Switch SVIs
+> Printers accessible only from own VLAN 
+> Applied on Core Switch SVIs
 
 
 ### NAT Overload (PAT)
