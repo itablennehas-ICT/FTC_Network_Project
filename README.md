@@ -40,7 +40,6 @@ all implemented and tested in Cisco Packet Tracer.
 - [DHCP](#dhcp)
 - [Security — ACLs, NAT & SSH](#security--acls-nat--ssh)
 - [Testing & Verification](#testing--verification)
-- [Features Implemented](#features-implemented)
 
 ---
 
