@@ -202,15 +202,8 @@ ip route 0.0.0.0 0.0.0.0 200.0.0.2
 ## DHCP
 
 - DHCP Server: `Server-DHCP` — Static IP `192.168.100.10` in VLAN 100
-- Method: Centralized server with `ip helper-address 192.168.100.10` on each Core SVI
 - All 9 VLANs receive IP addresses automatically
 - Printers use static IPs to support ACL-based isolation
-
-
-! Example relay on Core Switch
-interface vlan 10
- ip helper-address 192.168.100.10
-
 
 ---
 
@@ -228,7 +221,7 @@ access-list 100 deny ip any any
 ### Printer Isolation (Extended ACL)
 
 
-! Printers accessible only from own VLAN + IT
+! Printers accessible only from own VLAN 
 ! Applied on Core Switch SVIs
 
 
@@ -238,20 +231,7 @@ access-list 100 deny ip any any
 ip nat inside source list 100 interface G0/0/1 overload
 
 
-### SSH — Restricted to IT Only
-
-
-ip domain-name ftcclub.local
-crypto key generate rsa modulus 1024
-ip ssh version 2
-username admin privilege 15 secret <password>
-line vty 0 4
- transport input ssh
- login local
- access-class 1 in
-!
-access-list 1 permit 192.168.70.0 0.0.0.255
-
+### SSH — Restricted to IT Only 
 
 ---
 ## Testing & Verification
@@ -302,7 +282,6 @@ and confirm full connectivity across all VLANs, floors, and services.
 | Test | Source | Destination | Result | 
 |------|--------|-------------|----------|
 | Own dept access | Data PC (VLAN 10) | Printer D (192.168.10.6) | ✅ Reachable | 
-| IT access | IT PC (VLAN 70) | Printer D (192.168.10.6) | ✅ Reachable | 
 | Cross-dept blocked | Dev PC (VLAN 20) | Printer D (192.168.10.6) | ❌ Blocked | 
 | Cross-dept blocked | Media PC (VLAN 30) | Printer L (192.168.40.3) | ❌ Blocked | 
 
