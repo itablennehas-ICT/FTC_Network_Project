@@ -57,7 +57,7 @@ The network follows a **3-tier hierarchical design**
 | Tier | Device | Role |
 |------|--------|------|
 | Tier 1 — WAN | ISP-Router (ISR4331) | Simulates Internet — IP 200.0.0.2, Loopback 8.8.8.8 |
-| Tier 2 — Core | 3560-24PS Multilayer Switch | L3 Inter-VLAN routing, DHCP relay, ACL enforcement |
+| Tier 2 — Core | 3560-24PS Multilayer Switch | L3 Inter-VLAN routing, ACL enforcement |
 | Tier 3 — Access | F1-SW / F2-SW / F3-SW (2960) | L2 access per floor via trunk links to core |
 
 ---
@@ -73,7 +73,7 @@ Two VLANs serve this floor — Administration and the centralized Server Room.
 - Gateway (Core SVI): 192.168.5.1
 - Ports: Fa0/1 – Fa0/8
 - Devices: President, Vice-President, General Secretary, HR Director
-- DHCP: Assigned automatically from Server-DHCP via relay
+- DHCP: Assigned automatically from Server-DHCP 
 
 ### Server Room (VLAN 100)
 
@@ -87,7 +87,7 @@ Two VLANs serve this floor — Administration and the centralized Server Room.
 ## Floor 2 — Data, Development, Media & Logistics
 
 Floor 2 uses a star topology with 4 VLANs served by F2-SW (Catalyst 2960).
-All devices receive IPs automatically via DHCP relay. Printers have static IPs.
+All devices receive IPs automatically via DHCP server. Printers have static IPs.
 
 ### Data & AI (VLAN 10)
 
@@ -180,11 +180,11 @@ Inter-device links and routing configuration:
 Routing configuration:
 
 
-! On Core Switch
+> On Core Switch
 ip routing
 ip route 0.0.0.0 0.0.0.0 10.0.0.2
 
-! On Router0
+> On Router0
 ip route 192.168.0.0 255.255.0.0 10.0.0.1
 ip route 0.0.0.0 0.0.0.0 200.0.0.2
 
