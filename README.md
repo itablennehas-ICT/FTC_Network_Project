@@ -351,7 +351,7 @@ and confirm full connectivity across all VLANs, floors, and services.
 **DHCP IP Assignment on PC:**
 
 
-![dhcp_assigned](images/dhcp-ip.png)
+![dhcp_assigned](images/dhcp-ips.png)
 
 **DHCP Bindings on Server:**
 
